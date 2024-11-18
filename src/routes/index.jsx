@@ -1,6 +1,6 @@
 import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router';
 import { Header, Footer } from '../components';
-import { Home, CartShopping, Register, ProductDetail } from '../pages';
+import { Home, CartShopping, Register, ProductDetail, PaymentPage } from '../pages';
 
 const rootRoute = createRootRoute({
     component:() => (
@@ -38,6 +38,13 @@ const productDetailRoute = createRoute({
     component:ProductDetail
 });
 
-const routeTree = rootRoute.addChildren([homeRoute, cartRoute, registerRoute, productDetailRoute]);
+
+const paymentRoute = createRoute({
+    getParentRoute:() => rootRoute,
+    path:"/payment",
+    component:PaymentPage
+});
+
+const routeTree = rootRoute.addChildren([homeRoute, cartRoute, registerRoute, productDetailRoute, paymentRoute]);
 
 export const router = createRouter({ routeTree });

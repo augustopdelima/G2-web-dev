@@ -1,6 +1,7 @@
 import notebook from "../images/produtos/notebook.webp";
 import allIoOne from "../images/produtos/all-io-one.webp";
 import { CartProduct, CartProductDetail } from "../components";
+import { Link } from "@tanstack/react-router";
 
 export function CartShopping() {
     return (<>
@@ -22,7 +23,8 @@ export function CartShopping() {
                    <CartProductDetail specs={'Intel Core i5, 8GB RAM, SSD 256GB, Tela Full HD'}  price={'R$ 3.400,70'} quantity={1}/>
                    <CartProductDetail specs={'All In One, Intel Core i3, 8GB RAM, HD 1TB, Tela 23" Full HD'} price={'R$ 3.999,99'} quantity={1}/>
 
-                    <div className="mt-4 text-right">
+                    <div className="flex mt-4 justify-between">
+                        <Link className="text-lg bg-blue-600 text-white font-bold p-2 rounded-md" href="/payment"  >Confirmar Comprar</Link>
                         <h3 className="text-lg font-bold">
                             Total: R$ 7.400,7
                         </h3>
